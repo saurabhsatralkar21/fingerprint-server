@@ -4,7 +4,7 @@ const {authenticator} = require('otplib')
 
 
 const Home = (req, res) => {
-    res.json('Test is working')
+    res.json('Server is live')
 }
 
 
