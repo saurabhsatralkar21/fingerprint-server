@@ -10,13 +10,13 @@ const {handleRefreshToken} = require('../controllers/refreshTokenController')
 const {Logout} = require('../controllers/logoutController')
 
 
-// // Middleware
-// router.use(
-//     cors({
-//         credentials: true,
-//         origin: '*'
-//     })
-// )
+// Middleware
+router.use(
+    cors({
+        credentials: true,
+        origin: '*'
+    })
+)
 
 router.get('/', Home)
 router.post('/register', registerUser)
