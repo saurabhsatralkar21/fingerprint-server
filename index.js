@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URL)
     .catch((error) => console.log('Database not connected', error))
 
 
-app.use(cors({origin:["http://localhost:5173","fpserver.ssatralkar.com","demofp.ssatralkar.com"], credentials: true}))
+app.use(cors({origin:["http://localhost:5173","https://fpserver.ssatralkar.com","https://demofp.ssatralkar.com"], credentials: true}))
 
 // middleware for cookie parser
 app.use(cookieParser())
