@@ -5,14 +5,15 @@ const app = express()
 const {mongoose} = require('mongoose')
 const cookieParser = require("cookie-parser")
 
+console.log(process.env.MONGO_URL);
 
 // Databse connection
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true})
     .then(() => console.log('Database connected'))
     .catch((error) => console.log('Database not connected', error))
 
 
-app.use(cors({origin:["http://localhost:5173","https://fpserver.ssatralkar.com","https://demofp.ssatralkar.com"], credentials: true}))
+app.use(cors({origin:["http://localhost:5173","https://demofp.ssatralkar.com"], credentials: true}))
 
 // middleware for cookie parser
 app.use(cookieParser())
