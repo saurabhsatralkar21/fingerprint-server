@@ -7,6 +7,8 @@ const {authenticator} = require('otplib')
 
 // Login Endpoint
 const loginUser = async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.coom'); // client address
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
     try{
         const {email, password, visitorId} = req.body;
 

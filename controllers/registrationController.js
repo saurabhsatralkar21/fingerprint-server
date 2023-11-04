@@ -5,7 +5,8 @@ const qrcode = require('qrcode')
 const {authenticator} = require('otplib')
 
 const registerUser = async (req, res) => {
-
+    res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.coom'); // client address
+    res.setHeader('Access-Control-Allow-Methods', 'POST');
     try {
         const {name, email, password, visitorId} = req.body;
 
