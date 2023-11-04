@@ -1,7 +1,8 @@
 // const jwt = require('jsonwebtoken')
 
 const getProfile = (req, res) => {
-
+    res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.com'); // client address
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
     const {user} = req.user
     console.log("issue here");
     console.log(user);

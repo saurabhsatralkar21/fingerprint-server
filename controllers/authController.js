@@ -10,6 +10,8 @@ const Home = (req, res) => {
 
 const generateQRImage = async (req, res) => {
     try{
+        res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.com'); // client address
+        res.setHeader('Access-Control-Allow-Methods', 'POST');
         const {email} = req.body;
 
         const secret = authenticator.generateSecret();
@@ -29,6 +31,8 @@ const generateQRImage = async (req, res) => {
 
 const setMFAForUser = async(req, res) => {
     try{
+        res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.com'); // client address
+        res.setHeader('Access-Control-Allow-Methods', 'POST');
         const {email, qrCode} = req.body;
         const getUser = await User.findOne({email})
         const verified = authenticator.check(qrCode, getUser.MFASecret)

@@ -1,6 +1,8 @@
 const User = require("../models/user")
 
 const Logout = async(req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://demofp.ssatralkar.com'); // client address
+    res.setHeader('Access-Control-Allow-Methods', 'DELETE');
 
     const refreshToken = req.cookies.refreshToken;
 
